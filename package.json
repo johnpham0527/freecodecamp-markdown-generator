@@ -1,0 +1,24 @@
+{
+  "name": "freecodecamp-markdown-generator",
+  "version": "1.0.0",
+  "description": "This is one of FreeCodeCamp's Front-End Libraries Certification projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpham0527/freecodecamp-markdown-generator.git"
+  },
+  "keywords": [
+    "FreeCodeCamp",
+    "markdown",
+    "generator"
+  ],
+  "author": "John Pham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnpham0527/freecodecamp-markdown-generator/issues"
+  },
+  "homepage": "https://github.com/johnpham0527/freecodecamp-markdown-generator#readme"
+}
