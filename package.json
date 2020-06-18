@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/johnpham0527/freecodecamp-markdown-generator/issues"
   },
-  "homepage": "https://github.com/johnpham0527/freecodecamp-markdown-generator#readme"
+  "homepage": "https://github.com/johnpham0527/freecodecamp-markdown-generator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2"
+  }
 }
