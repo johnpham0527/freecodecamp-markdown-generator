@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers} from 'redux';
 import { Provider, connect } from 'react-redux';
-
-//var App = require('./components/App');
+import { marked } from 'marked';
 
 class AppWrapper extends React.Component {
   render() {
     return (
-        <p>Hello world!!</p>
+        <p>Hello world!</p>
     //   <Provider store={store}>
     //     <Container/>
     //   </Provider>
