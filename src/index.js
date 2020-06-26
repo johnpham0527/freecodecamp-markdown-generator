@@ -1,115 +1,123 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+//var App = require('./components/App');
 
+ReactDOM.render(
+    //<App />,
+    <p>Hello world!</p>,
+    document.getElementById('root')
+);
 
-const { Provider, connect } = ReactRedux;
-const { applyMiddleware, createStore, combineReducers, bindActionCreators} = Redux;
-const thunk = ReduxThunk.default;
-import marked from 'marked';
-import React from 'react';
+// const { Provider, connect } = ReactRedux;
+// const { applyMiddleware, createStore, combineReducers, bindActionCreators} = Redux;
+// const thunk = ReduxThunk.default;
+// import marked from 'marked';
+// import React from 'react';
 
-marked.setOptions({breaks:true});
+// marked.setOptions({breaks:true});
 
-//Messages Code
-const UPDATE = 'UPDATE';
+// //Messages Code
+// const UPDATE = 'UPDATE';
 
-const updateMessage = (newMessage) => {
-  return {
-    type: UPDATE,
-    markdown: newMessage,
-  }
-}
+// const updateMessage = (newMessage) => {
+//   return {
+//     type: UPDATE,
+//     markdown: newMessage,
+//   }
+// }
 
-const defaultMessage = {
-  markdown: `
-This is a h1 header
-================
+// const defaultMessage = {
+//   markdown: `
+// This is a h1 header
+// ================
 
-This is a h2 subheader
--------------------
+// This is a h2 subheader
+// -------------------
 
-[This is a link](#)
+// [This is a link](#)
 
-This is sample inline code, \`<h3>hello</h3>\`, between two backticks.
+// This is sample inline code, \`<h3>hello</h3>\`, between two backticks.
 
-    <p>This is a sample code block</p>
+//     <p>This is a sample code block</p>
 
-- This is a list item
+// - This is a list item
 
-> This is a sample blockquote
+// > This is a sample blockquote
 
-![React logo](https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png)
+// ![React logo](https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png)
 
-**This is sample bolded text.**
-`,
-};
+// **This is sample bolded text.**
+// `,
+// };
 
-const messageReducer = (state = defaultMessage, action) => {
-  let newState = Object.assign({},state);
-  switch (action.type) {
-    case UPDATE:
-      newState.markdown = action.markdown;
-      return newState;
-    default:
-      return state;
-    }
-};
+// const messageReducer = (state = defaultMessage, action) => {
+//   let newState = Object.assign({},state);
+//   switch (action.type) {
+//     case UPDATE:
+//       newState.markdown = action.markdown;
+//       return newState;
+//     default:
+//       return state;
+//     }
+// };
 
-const rootReducer = Redux.combineReducers({
-  msg: messageReducer,
-}); 
+// const rootReducer = Redux.combineReducers({
+//   msg: messageReducer,
+// }); 
 
-const store = Redux.createStore(rootReducer,applyMiddleware(thunk));
+// const store = Redux.createStore(rootReducer,applyMiddleware(thunk));
 
-class Presentational extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: '',
-        }
-    }
-    handleChange = (event) => {
-        this.props.updateNewMessage(event.target.value);
-        this.setState({
-            input: event.target.value
-        });
-    }
-    render() {
-        return (
-          <div>
-            <h1>Markdown Previewer</h1>
-            <h2>Type in Your Markdown Text:</h2>
-            <textarea rows='10' cols='100' id='editor'
-              value={this.props.messages.markdown}
-              onChange={this.handleChange}/><br/>
-            <div id='preview' dangerouslySetInnerHTML={{__html:marked(this.props.messages.markdown)}}></div>
-          </div>
-        );
-    }
-};
+// class Presentational extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             input: '',
+//         }
+//     }
+//     handleChange = (event) => {
+//         this.props.updateNewMessage(event.target.value);
+//         this.setState({
+//             input: event.target.value
+//         });
+//     }
+//     render() {
+//         return (
+//           <div>
+//             <h1>Markdown Previewer</h1>
+//             <h2>Type in Your Markdown Text:</h2>
+//             <textarea rows='10' cols='100' id='editor'
+//               value={this.props.messages.markdown}
+//               onChange={this.handleChange}/><br/>
+//             <div id='preview' dangerouslySetInnerHTML={{__html:marked(this.props.messages.markdown)}}></div>
+//           </div>
+//         );
+//     }
+// };
 
-const mapStateToProps = (state) => {
-  return {
-    messages: state.msg,
-  }
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     messages: state.msg,
+//   }
+// };
       
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateNewMessage: (newMessage) => {
-      dispatch(updateMessage(newMessage))
-    },
-  }
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     updateNewMessage: (newMessage) => {
+//       dispatch(updateMessage(newMessage))
+//     },
+//   }
+// };
       
-const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+// const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
       
-class AppWrapper extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Container/>
-      </Provider>
-   );
-  }
-};
+// class AppWrapper extends React.Component {
+//   render() {
+//     return (
+//       <Provider store={store}>
+//         <Container/>
+//       </Provider>
+//    );
+//   }
+// };
 
-ReactDOM.render(<AppWrapper />,document.getElementById('root'));
+// ReactDOM.render(<AppWrapper />,document.getElementById('root'));
