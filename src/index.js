@@ -5,9 +5,19 @@ var { Provider, connect } = require('react-redux');
 
 //var App = require('./components/App');
 
+class AppWrapper extends React.Component {
+  render() {
+    return (
+        <p>Hello world!!</p>
+    //   <Provider store={store}>
+    //     <Container/>
+    //   </Provider>
+   );
+  }
+};
+
 ReactDOM.render(
-    //<App />,
-    <p>Hello world!</p>,
+    <AppWrapper />,
     document.getElementById('root')
 );
 
