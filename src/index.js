@@ -1,6 +1,7 @@
 const { Provider, connect } = ReactRedux;
 const { applyMiddleware, createStore, combineReducers, bindActionCreators} = Redux;
 const thunk = ReduxThunk.default;
+import { marked }from 'marked';
 
 marked.setOptions({breaks:true});
 
