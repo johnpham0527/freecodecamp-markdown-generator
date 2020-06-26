@@ -1,5 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var { createStore, combineReducers } = require('redux');
+var { Provider, connect } = require('react-redux');
+
 //var App = require('./components/App');
 
 ReactDOM.render(
