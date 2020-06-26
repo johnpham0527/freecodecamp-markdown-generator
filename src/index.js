@@ -1,9 +1,7 @@
-//var React = require('react');
 import React from 'react';
 import ReactDOM from 'react-dom';
-//var ReactDOM = require('react-dom');
-var { createStore, combineReducers } = require('redux');
-var { Provider, connect } = require('react-redux');
+import { createStore, combineReducers} from 'redux';
+import { Provider, connect } from 'react-redux';
 
 //var App = require('./components/App');
 
