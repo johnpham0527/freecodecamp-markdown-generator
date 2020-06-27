@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers} from 'redux';
 import { Provider, connect } from 'react-redux';
-import { marked } from 'marked';
+import marked from 'marked';
+
+marked.setOptions({breaks:true});
 
 class AppWrapper extends React.Component {
   render() {
@@ -26,7 +28,7 @@ ReactDOM.render(
 // import marked from 'marked';
 // import React from 'react';
 
-// marked.setOptions({breaks:true});
+
 
 // //Messages Code
 // const UPDATE = 'UPDATE';
