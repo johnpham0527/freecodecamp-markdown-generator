@@ -40,6 +40,22 @@ This is sample inline code, \`<h3>hello</h3>\`, between two backticks.
 `,
 };
 
+const messageReducer = (state = defaultMessage, action) => {
+  let newState = Object.assign({},state);
+  switch (action.type) {
+    case UPDATE:
+      newState.markdown = action.markdown;
+      return newState;
+    default:
+      return state;
+    }
+};
+
+// const rootReducer = Redux.combineReducers({
+//   msg: messageReducer,
+// }); 
+
+
 class AppWrapper extends React.Component {
   render() {
     return (
@@ -62,24 +78,6 @@ ReactDOM.render(
 // import marked from 'marked';
 // import React from 'react';
 
-
-
-
-
-// const messageReducer = (state = defaultMessage, action) => {
-//   let newState = Object.assign({},state);
-//   switch (action.type) {
-//     case UPDATE:
-//       newState.markdown = action.markdown;
-//       return newState;
-//     default:
-//       return state;
-//     }
-// };
-
-// const rootReducer = Redux.combineReducers({
-//   msg: messageReducer,
-// }); 
 
 // const store = Redux.createStore(rootReducer,applyMiddleware(thunk));
 
