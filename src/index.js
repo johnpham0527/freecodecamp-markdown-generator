@@ -84,6 +84,20 @@ class Presentational extends React.Component {
     }
 };
 
+const mapStateToProps = (state) => {
+  return {
+    messages: state.msg,
+  }
+};
+      
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateNewMessage: (newMessage) => {
+      dispatch(updateMessage(newMessage))
+    },
+  }
+};
+
 class AppWrapper extends React.Component {
   render() {
     return (
@@ -107,20 +121,6 @@ ReactDOM.render(
 // import React from 'react';
 
 
-
-// const mapStateToProps = (state) => {
-//   return {
-//     messages: state.msg,
-//   }
-// };
-      
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     updateNewMessage: (newMessage) => {
-//       dispatch(updateMessage(newMessage))
-//     },
-//   }
-// };
       
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
       
