@@ -103,10 +103,9 @@ const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 class AppWrapper extends React.Component {
   render() {
     return (
-        <p>Hello world!</p>
-    //   <Provider store={store}>
-    //     <Container/>
-    //   </Provider>
+      <Provider store={store}>
+        <Container/>
+      </Provider>
    );
   }
 };
@@ -115,22 +114,3 @@ ReactDOM.render(
     <AppWrapper />,
     document.getElementById('root')
 );
-
-// const { Provider, connect } = ReactRedux;
-// const { applyMiddleware, createStore, combineReducers, bindActionCreators} = Redux;
-// const thunk = ReduxThunk.default;
-// import marked from 'marked';
-// import React from 'react';
-    
-      
-// class AppWrapper extends React.Component {
-//   render() {
-//     return (
-//       <Provider store={store}>
-//         <Container/>
-//       </Provider>
-//    );
-//   }
-// };
-
-// ReactDOM.render(<AppWrapper />,document.getElementById('root'));
