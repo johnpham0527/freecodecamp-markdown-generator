@@ -55,6 +55,7 @@ const rootReducer = combineReducers({
   msg: messageReducer,
 }); 
 
+const store = createStore(rootReducer);
 
 class AppWrapper extends React.Component {
   render() {
@@ -79,7 +80,7 @@ ReactDOM.render(
 // import React from 'react';
 
 
-// const store = Redux.createStore(rootReducer,applyMiddleware(thunk));
+
 
 // class Presentational extends React.Component {
 //     constructor(props) {
