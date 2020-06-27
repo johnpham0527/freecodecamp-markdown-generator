@@ -98,6 +98,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
 class AppWrapper extends React.Component {
   render() {
     return (
@@ -119,10 +121,7 @@ ReactDOM.render(
 // const thunk = ReduxThunk.default;
 // import marked from 'marked';
 // import React from 'react';
-
-
-      
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+    
       
 // class AppWrapper extends React.Component {
 //   render() {
