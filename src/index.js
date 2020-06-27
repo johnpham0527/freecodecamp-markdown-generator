@@ -57,6 +57,33 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer);
 
+class Presentational extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: '',
+        }
+    }
+    handleChange = (event) => {
+        this.props.updateNewMessage(event.target.value);
+        this.setState({
+            input: event.target.value
+        });
+    }
+    render() {
+        return (
+          <div>
+            <h1>Markdown Previewer</h1>
+            <h2>Type in Your Markdown Text:</h2>
+            <textarea rows='10' cols='100' id='editor'
+              value={this.props.messages.markdown}
+              onChange={this.handleChange}/><br/>
+            <div id='preview' dangerouslySetInnerHTML={{__html:marked(this.props.messages.markdown)}}></div>
+          </div>
+        );
+    }
+};
+
 class AppWrapper extends React.Component {
   render() {
     return (
@@ -80,34 +107,6 @@ ReactDOM.render(
 // import React from 'react';
 
 
-
-
-// class Presentational extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             input: '',
-//         }
-//     }
-//     handleChange = (event) => {
-//         this.props.updateNewMessage(event.target.value);
-//         this.setState({
-//             input: event.target.value
-//         });
-//     }
-//     render() {
-//         return (
-//           <div>
-//             <h1>Markdown Previewer</h1>
-//             <h2>Type in Your Markdown Text:</h2>
-//             <textarea rows='10' cols='100' id='editor'
-//               value={this.props.messages.markdown}
-//               onChange={this.handleChange}/><br/>
-//             <div id='preview' dangerouslySetInnerHTML={{__html:marked(this.props.messages.markdown)}}></div>
-//           </div>
-//         );
-//     }
-// };
 
 // const mapStateToProps = (state) => {
 //   return {
