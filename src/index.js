@@ -6,6 +6,40 @@ import marked from 'marked';
 
 marked.setOptions({breaks:true});
 
+//Messages Code
+const UPDATE = 'UPDATE';
+
+const updateMessage = (newMessage) => {
+  return {
+    type: UPDATE,
+    markdown: newMessage,
+  }
+}
+
+const defaultMessage = {
+  markdown: `
+This is a h1 header
+================
+
+This is a h2 subheader
+-------------------
+
+[This is a link](#)
+
+This is sample inline code, \`<h3>hello</h3>\`, between two backticks.
+
+    <p>This is a sample code block</p>
+
+- This is a list item
+
+> This is a sample blockquote
+
+![React logo](https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png)
+
+**This is sample bolded text.**
+`,
+};
+
 class AppWrapper extends React.Component {
   render() {
     return (
@@ -30,39 +64,7 @@ ReactDOM.render(
 
 
 
-// //Messages Code
-// const UPDATE = 'UPDATE';
 
-// const updateMessage = (newMessage) => {
-//   return {
-//     type: UPDATE,
-//     markdown: newMessage,
-//   }
-// }
-
-// const defaultMessage = {
-//   markdown: `
-// This is a h1 header
-// ================
-
-// This is a h2 subheader
-// -------------------
-
-// [This is a link](#)
-
-// This is sample inline code, \`<h3>hello</h3>\`, between two backticks.
-
-//     <p>This is a sample code block</p>
-
-// - This is a list item
-
-// > This is a sample blockquote
-
-// ![React logo](https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png)
-
-// **This is sample bolded text.**
-// `,
-// };
 
 // const messageReducer = (state = defaultMessage, action) => {
 //   let newState = Object.assign({},state);
