@@ -51,9 +51,9 @@ const messageReducer = (state = defaultMessage, action) => {
     }
 };
 
-// const rootReducer = Redux.combineReducers({
-//   msg: messageReducer,
-// }); 
+const rootReducer = combineReducers({
+  msg: messageReducer,
+}); 
 
 
 class AppWrapper extends React.Component {
